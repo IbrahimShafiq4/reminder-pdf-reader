@@ -1,0 +1,222 @@
+@import "./variables.scss";
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+a,
+ul,
+li,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+figure {
+  margin: 0;
+}
+
+.second-bg-color {
+  background-color: $second-bg-color;
+}
+
+.white-color {
+  color: $bg-color;
+}
+
+.primary-color {
+  color: $primary-color;
+}
+
+.second-color {
+  color: $second-bg-color;
+}
+
+.grey-color {
+  color: $grey-color;
+}
+
+.grey-color-500 {
+  color: $grey-color-500;
+}
+
+.text-primary-color {
+  color: $primary-color;
+}
+
+.bg-color {
+  background-color: $bg-color;
+}
+
+.bg-primary-color {
+  background-color: $primary-color;
+}
+
+.bg-main-linear-gradient {
+  background-image: linear-gradient(83deg, #f5f7fd 36.35%, #fff9e9 100%);
+}
+
+.bg-grey {
+  background: $grey-color;
+}
+
+.bg-grey-500 {
+  background-color: $grey-color-500;
+}
+
+.font-weight-400 {
+  font-weight: 400;
+}
+
+.font-weight-500 {
+  font-weight: 500;
+}
+
+.font-weight-600 {
+  font-weight: 600;
+}
+
+.font-weight-700 {
+  font-weight: 700;
+}
+
+.font-weight-800 {
+  font-weight: 800;
+}
+
+.font-weight-900 {
+  font-weight: 900;
+}
+
+.font-size-inherit {
+  font-size: inherit;
+}
+
+.w-fit-content {
+  width: fit-content;
+}
+
+.main-box-shadow {
+  box-shadow: $main-box-shadow;
+}
+
+.main-border {
+  border: $main-border;
+}
+
+.border-top {
+  border-top: $main-border;
+}
+
+.padding-15 {
+  padding-top: 15px;
+}
+
+.main-padding {
+  padding: 2rem;
+}
+
+.gap-2-5 {
+  gap: 2.5rem;
+}
+
+.gap-125 {
+  gap: 1.25rem;
+}
+
+.g-125 {
+  --bs-gutter-x: 1.25rem;
+  --bs-gutter-y: 1.25rem;
+}
+
+.gap-075 {
+  gap: 0.25rem;
+}
+
+.gap-025 {
+  gap: 0.25rem;
+}
+
+.gap-125 {
+  gap: 1.25rem;
+}
+
+.padding-025 {
+  padding: 0.25rem;
+}
+
+.padding-125 {
+  padding: 1.25rem;
+}
+
+.font-size-1rem {
+  font-size: 1rem;
+}
+
+.section-gradient {
+  background-image: linear-gradient(
+    to bottom,
+    #fff 10%,
+    $light-color 80%,
+    #fff
+  );
+}
+
+.section-gradient-two {
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 236, 186, 0.1) 10%,
+    #fff 80%,
+    rgba(255, 236, 186, 0.1)
+  );
+}
+
+.section-gradient-three {
+  background: linear-gradient(
+    66deg,
+    rgba(255, 249, 233, 0.8) 49.91%,
+    rgba(0, 113, 220, 0.3) 120.74%
+  );
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+.main-transition {
+  transition: $main-transition;
+}
+
+.rtl-dir {
+  direction: rtl;
+}
+
+.ltr-dir {
+  direction: ltr;
+}
+
+input,
+textarea,
+select {
+  background-color: transparent;
+  border: 1px solid $grey-color-500;
+  outline: none;
+  padding: 0.575rem 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: $grey-color;
+  transition: $main-transition;
+  direction: rtl;
+  &:focus {
+    border-color: $primary-color-500;
+  }
+}
+
+textarea {
+  resize: none;
+  max-height: 150px;
+}

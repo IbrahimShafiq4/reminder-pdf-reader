@@ -1,0 +1,36 @@
+@import "./../../../assets/abstracts/layout.scss";
+
+.dialog-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(2px);
+  z-index: 9;
+  width: 100%;
+}
+
+.dialog-content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 400px;
+  z-index: 99;
+}
+
+h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: $black-color-500
+}
+
+label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #2e2e2e;
+}
+

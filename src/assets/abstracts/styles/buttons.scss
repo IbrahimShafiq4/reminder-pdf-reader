@@ -1,0 +1,68 @@
+button {
+  padding: 0.8rem 1rem;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  font-weight: 700;
+  border: 1px solid transparent;
+  transition: $main-transition;
+
+  &.primary {
+    color: $main-white;
+    background-color: $primary-color;
+    border-color: $primary-color;
+
+    &:hover {
+      background-color: transparent;
+      border-color: $primary-color;
+      color: $primary-color;
+    }
+  }
+
+  &.primary-hover {
+    background-color: transparent;
+    border-color: $primary-color;
+    color: $primary-color;
+
+    path {
+      transition: $main-transition;
+    }
+
+    &:hover {
+      color: $main-white;
+      background-color: $primary-color;
+      border-color: $primary-color;
+
+      path {
+        stroke: $main-white;
+      }
+    }
+  }
+
+  &.primary-color {
+    color: $primary-color;
+    background-color: transparent;
+    padding-inline: 0;
+  }
+
+  &:disabled {
+    cursor: no-drop;
+  }
+
+  &.default-btn {
+    color: $primary-color;
+    background-color: transparent;
+  }
+
+  &.delete-btn {
+    color: $main-white;
+    background-color: $warning-color-100;
+    border-color: $warning-color-100;
+
+    &:hover {
+      background-color: transparent;
+      border-color: $warning-color-100;
+      color: $warning-color-100;
+    }
+  }
+}

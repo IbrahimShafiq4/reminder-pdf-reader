@@ -1,0 +1,27 @@
+<header class="bg-main-linear-gradient main-box-shadow" dir="rtl">
+  <div class="container d-flex align-items-center justify-content-between">
+
+    <!-- Logo -->
+    <figure class="d-md-block d-none mb-0" role="button" [routerLink]="isAuthenticated ? '/' : '/login'">
+      <img src="./../../assets/images/logo.png" alt="Egypt's Sustainable Development Receiver Device"
+        class="img-fluid" />
+    </figure>
+
+    <!-- Authenticated Nav -->
+    <ul *ngIf="isAuthenticated"
+      class="d-flex gap-3 m-0 p-0 flex-md-grow-0 flex-grow-1 justify-content-md-between justify-content-around">
+      <li routerLink="/reminder" routerLinkActive="nav-active-link" [routerLinkActiveOptions]="{ exact: true }">
+        <a class="nav-link">مأموريات</a>
+      </li>
+      <li>
+        <a class="nav-link" href="https://www.ocr.best/ar/image-to-text" target="_blank" rel="noopener">
+          استخراج نص
+        </a>
+      </li>
+      <li>
+        <a class="nav-link" role="button" (click)="logout()">تسجيل خروج</a>
+      </li>
+    </ul>
+
+  </div>
+</header>

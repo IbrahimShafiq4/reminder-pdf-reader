@@ -1,1 +1,37 @@
-/* You can add global styles to this file, and also import other style files */
+@import "./assets/abstracts/layout.scss";
+@font-face {
+  font-family: TajawalFont;
+  src: url("./assets/Tajawal/Tajawal-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+s,
+li,
+input,
+textarea,
+strong,
+span,
+button,
+div,
+a {
+  font-family: TajawalFont;
+}
+
+
+body {
+  > * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  background-color: $second-bg-color;
+}

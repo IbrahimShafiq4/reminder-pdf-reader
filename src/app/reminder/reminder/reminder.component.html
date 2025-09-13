@@ -1,0 +1,37 @@
+<div class="container">
+  <article class="scrollbar">
+    <header
+      class="d-flex align-items-center justify-content-between my-3 px-0 flex-md-row flex-column-reverse gap-3 gap-md-0">
+      <button class="primary" (click)="openDialog()">إضافة مأمورية</button>
+      <h2 class="text-center">جدول المأموريات</h2>
+    </header>
+
+    <table class="container main-box-shadow" dir="rtl">
+      <thead>
+        <tr>
+          <th>إسم</th>
+          <th>رتبة</th>
+          <th>مكان الإلتزام</th>
+          <th>تاريخ</th>
+          <th>ملاحظات</th>
+          <th>إجراءات</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let s of schedules">
+          <td>{{ s.personName }}</td>
+          <td>{{ s.personRank }}</td>
+          <td>{{ s.schedulePlace }}</td>
+          <td>{{ s.scheduleDate }}</td>
+          <td>{{ s.notes || ' لا يوجد ملاحظات ' }}</td>
+          <td>
+            <button class="delete-btn" (click)="deleteSchedule(s.id)">حذف</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </article>
+</div>
+
+<app-add-new-schedule *ngIf="showDialog" (closeDialog)="closeDialog()" (scheduleAdded)="onScheduleAdded($event)">
+</app-add-new-schedule>

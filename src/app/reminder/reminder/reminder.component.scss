@@ -1,0 +1,206 @@
+@import "./../../../assets/abstracts/layout.scss";
+.scrollbar {
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: $primary-color $second-bg-color;
+  scroll-behavior: smooth;
+  transition: 1s linear;
+
+  &.ltr-dir {
+    direction: ltr;
+
+    &::-webkit-scrollbar {
+      width: 8px;
+      direction: ltr;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: $primary-color;
+      border-radius: 10px;
+      direction: ltr;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: $second-bg-color;
+      direction: ltr;
+    }
+
+    table {
+      direction: rtl;
+    }
+  }
+
+  &.rtl-dir {
+    direction: rtl;
+
+    &::-webkit-scrollbar {
+      width: 8px;
+      direction: rtl;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: $primary-color;
+      border-radius: 10px;
+      direction: rtl;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: $second-bg-color;
+      direction: rtl;
+    }
+
+    table {
+      direction: ltr;
+    }
+  }
+}
+
+table {
+  width: 100%;
+  thead {
+    th {
+      background-color: #f2f2f2;
+      padding: 0.75rem 0.5rem;
+      border-top: 1px solid #d8d8d8;
+      border-bottom: 1px solid #d8d8d8;
+      font-size: 1rem;
+      font-weight: 500;
+      text-align: center;
+      text-wrap: nowrap;
+    }
+  }
+  tbody {
+    tr {
+      border-bottom: 1px solid #d8d8d8 !important;
+    }
+    td {
+      background-color: #fff;
+      padding: 0.75rem 0.5rem;
+      text-align: center;
+      text-wrap: nowrap;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    overflow-x: auto;
+    white-space: nowrap;
+
+    th,
+    td {
+      white-space: nowrap;
+    }
+  }
+}
+
+input[type="checkbox"] {
+  position: relative;
+  width: 50px;
+  height: 30px;
+  padding: 5px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: #a2a2a2;
+  cursor: pointer;
+  outline: none;
+  border-radius: 20px;
+  transition: $main-transition;
+  transition-delay: 0.2s;
+}
+
+input[type="checkbox"]:checked {
+  background-color: $primary-color;
+}
+
+input[type="checkbox"]::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  bottom: 5px;
+  width: 20px;
+  background-color: #fff;
+  border-radius: 20px;
+  transform: scale(1.2);
+  transition: $main-transition;
+}
+
+input[type="checkbox"]:checked::before {
+  left: 25px;
+}
+
+button {
+  &:not(.primary-hover, .primary) {
+    padding: 0;
+  }
+
+  &.primary-hover {
+    padding: 0.75rem 0.5rem;
+    border-radius: 0.5rem;
+    &svg {
+      path {
+        stroke: $light-color;
+      }
+    }
+  }
+
+  figure img {
+    width: 1.75rem;
+    height: 1.75rem;
+  }
+}
+
+td {
+  font-size: 0.875rem;
+}
+
+a {
+  text-decoration-line: underline;
+  text-underline-offset: 4px;
+}
+
+.circle-watch {
+  background-color: $primary-color-500;
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+}
+
+button {
+  padding: 0.5rem 0.8rem;
+  font-size: 1.25rem;
+  border-radius: 5px;
+
+  .acceptenace-btn {
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: #fff;
+  }
+
+  .primary-check {
+    background-color: #37843e;
+  }
+
+  &.primary-xmark {
+    background-color: #a83138;
+  }
+}
+
+.image-icon {
+  background-color: $light-color;
+  padding: 0.375rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: $black-color-500;
+}
+
+.delete-btn {
+  font-size: 1rem;
+  padding: 5px 10px !important;
+}

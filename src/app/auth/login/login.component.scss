@@ -1,0 +1,24 @@
+@import './../../../assets/abstracts/layout.scss';
+
+article {
+  height: 80vh;
+}
+
+input {
+  padding: 5px 10px;
+}
+
+:host {
+  height: 100%;
+}
+
+figure {
+  img {
+    width: 150px;
+    object-fit: cover;
+  }
+}
+
+label, input {
+  font-size: 1.25rem;
+}

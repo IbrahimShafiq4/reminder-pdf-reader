@@ -1,0 +1,42 @@
+@import "./../../assets/abstracts/layout.scss";
+
+header {
+  padding: 10px;
+
+  figure {
+    img {
+      max-width: 100px;
+      width: 100%;
+      object-fit: contain;
+      aspect-ratio: 3 / 1;
+    }
+  }
+}
+
+li {
+  position: relative;
+  padding: 5px 10px;
+  border-radius: 2px;
+  a {
+    color: $black-color-500;
+    font-weight: 600;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 0%;
+    background-color: rgba($color: $primary-color, $alpha: 0.3);
+    border-radius: 5px;
+    transition: transform $main-transition;
+  }
+
+  &.nav-active-link {
+    &::before {
+      width: 100%;
+    }
+  }
+}

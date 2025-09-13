@@ -1,0 +1,25 @@
+@import "./../../assets/abstracts/layout.scss";
+
+footer {
+  background: linear-gradient(83deg, #f5f7fd 36.35%, #fff9e9 100%);
+  padding: 3rem 0;
+  position: relative;
+}
+
+.heart-icon {
+  color: red;
+  font-size: 1.25rem;
+  display: inline-block;
+  animation: animateHeart 1s infinite;
+  text-shadow: 0 0 10px rgba(255, 0, 0, 0.4);
+}
+
+@keyframes animateHeart {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}

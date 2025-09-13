@@ -1,0 +1,17 @@
+<div class="dialog-backdrop bg-black bg-opacity-50" (click)="onCancel()"></div>
+<div class="dialog-content">
+  <h3 class="mb-3 text-center">إضافة مأمورية</h3>
+
+  <form [formGroup]="scheduleForm" (ngSubmit)="onSubmit()" class="d-flex flex-column gap-2">
+    <input formControlName="personName" placeholder="الإسم" />
+    <input formControlName="personRank" placeholder="الرتبة" />
+    <input formControlName="schedulePlace" placeholder="مكان الإلتزام" />
+    <input type="date" formControlName="scheduleDate" />
+    <textarea formControlName="notes" placeholder="ملاحظات"></textarea>
+
+    <div class="d-flex justify-content-between mt-2">
+      <button type="button" class="delete-btn py-1 px-2" (click)="onCancel()">إلغاء</button>
+      <button type="submit" class="primary py-1 px-2" [disabled]="scheduleForm.invalid">حفظ</button>
+    </div>
+  </form>
+</div>
