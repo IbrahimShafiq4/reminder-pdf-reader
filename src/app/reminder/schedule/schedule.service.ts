@@ -3,7 +3,9 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { map, Observable } from 'rxjs';
 
 export interface Schedule {
-  scheduleDate: string;
+  scheduleDate?: string;
+  scheduleDateFrom: string;
+  scheduleDateTo: string;
   personName: string;
   notes?: string;
   personRank: string;

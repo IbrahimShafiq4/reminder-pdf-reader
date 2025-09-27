@@ -2,34 +2,71 @@
   <article class="scrollbar">
     <header
       class="d-flex align-items-center justify-content-between my-3 px-0 flex-md-row flex-column-reverse gap-3 gap-md-0">
-      <button class="primary" (click)="openDialog()">إضافة مأمورية</button>
+      <button class="primary rounded-2 py-2 px-3" (click)="openDialog()">إضافة مأمورية</button>
       <h2 class="text-center">جدول المأموريات</h2>
     </header>
 
-    <table class="container main-box-shadow" dir="rtl">
-      <thead>
-        <tr>
-          <th>إسم</th>
-          <th>رتبة</th>
-          <th>مكان الإلتزام</th>
-          <th>تاريخ</th>
-          <th>ملاحظات</th>
-          <th>إجراءات</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let s of schedules">
-          <td>{{ s.personName }}</td>
-          <td>{{ s.personRank }}</td>
-          <td>{{ s.schedulePlace }}</td>
-          <td>{{ s.scheduleDate }}</td>
-          <td>{{ s.notes || ' لا يوجد ملاحظات ' }}</td>
-          <td>
-            <button class="delete-btn" (click)="deleteSchedule(s.id)">حذف</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="d-md-block d-none">
+      <table class="container main-box-shadow" dir="rtl">
+        <thead>
+          <tr>
+            <th>إسم</th>
+            <th>رتبة</th>
+            <th>مكان الإلتزام</th>
+            <th>تاريخ بداية المأمورية</th>
+            <th>تاريخ نهاية المأمورية</th>
+            <th>ملاحظات</th>
+            <th>إجراءات</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let s of schedules">
+            <td>{{ s.personName }}</td>
+            <td>{{ s.personRank }}</td>
+            <td>{{ s.schedulePlace }}</td>
+            <td>{{ s.scheduleDateFrom || s.scheduleDate || 'لا يوجد تاريخ' }}</td>
+            <td>{{ s.scheduleDateTo || 'لا يوجد تاريخ' }}</td>
+            <td>{{ s.notes || ' لا يوجد ملاحظات ' }}</td>
+            <td>
+              <button class="delete-btn" (click)="deleteSchedule(s.id)">حذف</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Enhanced Card View for Mobile -->
+    <div class="card-view d-md-none d-block">
+      <div class="card-container">
+        <div class="schedule-card" *ngFor="let s of schedules">
+          <div class="card-header" dir="rtl">
+            <h3>{{ s.personName }}</h3>
+            <span class="rank-badge">{{ s.personRank }}</span>
+          </div>
+          <div class="card-body">
+            <div class="info-row" dir="rtl">
+              <span class="label">مكان الإلتزام:</span>
+              <span class="value">{{ s.schedulePlace }}</span>
+            </div>
+            <div class="info-row" dir="rtl">
+              <span class="label">تاريخ البداية:</span>
+              <span class="value">{{ s.scheduleDateFrom || s.scheduleDate || 'لا يوجد تاريخ' }}</span>
+            </div>
+            <div class="info-row" dir="rtl">
+              <span class="label">تاريخ النهاية:</span>
+              <span class="value">{{ s.scheduleDateTo || 'لا يوجد تاريخ' }}</span>
+            </div>
+            <div class="info-row" dir="rtl">
+              <span class="label">ملاحظات:</span>
+              <span class="value">{{ s.notes || 'لا يوجد ملاحظات' }}</span>
+            </div>
+          </div>
+          <div class="card-footer">
+            <button class="delete-btn w-100" (click)="deleteSchedule(s.id)">حذف</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </article>
 </div>
 

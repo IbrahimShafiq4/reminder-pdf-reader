@@ -21,7 +21,8 @@ export class AddNewScheduleComponent {
   @Output() scheduleAdded = new EventEmitter<Schedule>();
 
   scheduleForm = new FormGroup({
-    scheduleDate: new FormControl('', Validators.required),
+    scheduleDateFrom: new FormControl('', Validators.required),
+    scheduleDateTo: new FormControl('', Validators.required),
     personName: new FormControl('', Validators.required),
     notes: new FormControl(''),
     personRank: new FormControl('', Validators.required),
